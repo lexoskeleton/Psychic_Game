@@ -4,10 +4,10 @@ var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
 
 
 // Creating variables to hold the number of wins & losses (They start at 0).
-var wins = 0;
-var losses = 0;
+var winCounter = 0;
+var lossesCounter = 0;
 var guessesLeft = 10;
-var guessesSoFar = [""];
+var guessesSoFar = [];
 var userGuess = "";
 
 //this function runs whenever the user presses a key
@@ -20,7 +20,7 @@ document.onkeyup = function(event) {
     //guesses left decrease by 1
     //Find the div with the ID of Wins + update it with the value of the losses variable
     if (userGuess === computerGuess) {
-        wins++;
+        winCounter++;
         guessesLeft--;
         var winDiv = getElementById("wins");
         winDiv.textContent(wins);
@@ -29,7 +29,7 @@ document.onkeyup = function(event) {
     //Increase losses by 1
     //  Find the div with an id of losses; update it with the value of the losses variable.
     else  {
-        losses++;
+        lossesCounter++;
         guessesLeft--;
        var lossesDiv= getElementById("losses");
        lossesDiv.textContent(losses);
